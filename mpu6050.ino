@@ -54,9 +54,9 @@ void loop() {
   old_t = current_t;
   // Calculating Roll and Pitch from the accelerometer data
   norm_g =  sqrt(AccX*AccX + AccY*AccY+AccZ*AccZ);
-  acceleration[2] = AccX / norm_g;
-  acceleration[1]= AccY/norm_g;
-  acceleration[0]= - AccZ/norm_g;
+  acceleration[0] = -AccX / norm_g;
+  acceleration[2]= AccY/norm_g;
+  acceleration[1]= -AccZ/norm_g;
   //accAngleX = (atan(AccY / sqrt(pow(AccX, 2) + pow(AccZ, 2))) * 180 / PI) - 0.58; // AccErrorX ~(0.58) See the calculate_IMU_error()custom function for more details
   //accAngleY = (atan(-1 * AccX / sqrt(pow(AccY, 2) + pow(AccZ, 2))) * 180 / PI) + 1.58; // AccErrorY ~(-1.58)
  Serial.print("ERROR X: " + String(GyroErrorX));
